@@ -36,6 +36,14 @@ header{
     align-items: center;
     border: 2px solid yellow;
 }
+.book-stack-2{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid yellow;
+}
 .book{
     height: 300px;
     min-width: 225px;

@@ -13,6 +13,7 @@ const addBtn = document.querySelector("#add-button");
 // GLOBAL VARIABLES
 let library = [];
 let i = 0;
+let isRead = false;
 
 // FUNCTIONS
 function book(title, author, pages, read){
@@ -22,11 +23,7 @@ function book(title, author, pages, read){
     this.read = read;
 };
 
-function addBook(){
-    a = prompt("Title").toUpperCase();
-    b = prompt("Author").toUpperCase();
-    c = prompt("Pages").toUpperCase();
-    d = prompt("Read").toUpperCase();
+function addBook(a, b, c, d){
     library.push(new book(a, b, c, d));
 };
 
@@ -64,7 +61,11 @@ function newBook(stack){
     book.appendChild(readContainer);
 
     const read = document.createElement('h3');
-    read.innerHTML = library[i].read;
+    if(isRead){
+        read.innerHTML = "Read";
+    }else if(!isRead){
+        read.innerHTML = "Not read";
+    }
     readContainer.appendChild(read);
 
     const deleteCont = document.createElement('div');
@@ -77,6 +78,7 @@ function newBook(stack){
 
     deleteCont.addEventListener('click', () => {
         book.classList.add('disable');
+        i--;
     });
 
     i++;
@@ -87,7 +89,23 @@ add.addEventListener('click', () => {
 });
 
 addBtn.addEventListener('click', () => {
-    addBook();
+    if(i < 4){
+        a = bookName.value.toUpperCase();
+        b = bookAuthor.value.toUpperCase();
+        c = bookPages.value.toUpperCase();
+        d = bookRead.value.toUpperCase();
+        addBook(a, b, c, d);
+        newBook(bookLibrary);
+    }else if(i >= 4 && i<9){
+        a = bookName.value.toUpperCase();
+        b = bookAuthor.value.toUpperCase();
+        c = bookPages.value.toUpperCase();
+        d = bookRead.value.toUpperCase();
+        addBook(a, b, c, d);
+        newBook(bookLibrary2);
+    }else{
+        alert('cant add more books');
+    }
     modal.style.display = "none";
 });
 
@@ -95,14 +113,8 @@ window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+};
 
-// if(i < 5){
-//     addBook();
-//     newBook(bookLibrary);
-// }else if(i > 5){
-//     addBook();
-//     newBook(bookLibrary2);
-// }else{
-//     console.log('fuck you');
-// }
+bookRead.addEventListener('click', () => {
+    isRead = !isRead;
+});
