@@ -4,6 +4,7 @@ const bookLibrary2 = document.querySelector(".book-stack-2");
 
 // MODAL SELECTORS
 const modal = document.querySelector(".modal-container");
+const form = document.getElementById("form");
 const bookName = document.querySelector("#book-name");
 const bookAuthor = document.querySelector("#book-author");
 const bookPages = document.querySelector("#book-pages");
@@ -76,6 +77,17 @@ function newBook(stack){
     }
     readContainer.appendChild(read);
 
+    readContainer.addEventListener('click', () => {
+        isRead = !isRead;
+        readContainer.classList.toggle('read');
+        readContainer.classList.toggle('not-read');
+        if(isRead){
+            read.innerHTML = "Read";
+        }else if(!isRead){
+            read.innerHTML = "Not read";
+        }
+    })
+
     const deleteCont = document.createElement('div');
     deleteCont.classList.add('delete');
     book.appendChild(deleteCont);
@@ -97,7 +109,8 @@ add.addEventListener('click', () => {
     modal.style.display = "block";
 });
 
-addBtn.addEventListener('click', () => {
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     if(i < 4){
         a = bookName.value;
         b = bookAuthor.value;

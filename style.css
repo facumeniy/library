@@ -1,5 +1,9 @@
 *{
     font-family: 'Raleway', sans-serif;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
     margin: 0;
 }
 body{
@@ -10,8 +14,25 @@ header{
     width: 100%;
     height: 80px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
-    border-bottom: 2px solid black;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+}
+.logo-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    /* border: 1px solid red; */
+}
+#logo{
+    font-size: 40px;
+    font-weight: 700;
 }
 .library-section{
     width: 100%;
@@ -19,7 +40,7 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 /* ADD CARD STYLING */
 .add-book-card{
@@ -48,7 +69,7 @@ header{
 .add-button{
     width: 70%;
     height: 70%;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: #cc1d2b;
     border: none;
     display: flex;
@@ -68,6 +89,7 @@ header{
     align-items: center;
 }
 .add-btn-text h3{
+    font-size: 18px;
     color: #ffffff;
 }
 .delete-button-container{
@@ -80,7 +102,7 @@ header{
 .delete-button{
     width: 70%;
     height: 70%;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: #cc1d2b;
     border: none;
     display: flex;
@@ -100,6 +122,7 @@ header{
     align-items: center;
 }
 .delete-btn-text h3{
+    font-size: 18px;
     color: white;
 }
 /* END OF ADD CARD STYLING */
@@ -109,7 +132,6 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid yellow;
 }
 .book-stack-2{
     height: 100%;
@@ -117,7 +139,6 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid yellow;
 }
 /* BOOK CARD STYLING */
 .book{
@@ -132,21 +153,21 @@ header{
     background-color: #f8f6f2;
     border: none;
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
--webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
     margin: 00px 20px;
 }
 .title-container{
     width: 100%;
-    height: 60px;
     margin-top: 30px;
-    overflow: auto;
     display: flex;
+    word-break: break-all;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 .title-container h3{
+    text-align: center;
+    overflow-wrap: break-word;
     font-weight: 700;
     font-size: 25px;
     color: black;
@@ -157,7 +178,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 .autor-container h3{
     font-weight: 500;
@@ -169,7 +189,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 .pages-container h3{
     font-weight: 300;
@@ -184,10 +203,14 @@ header{
     justify-content: center;
     align-items: center;
     border: none;
+    transition: all 0.3s ease-out;
 }
 .read-container:hover{
     cursor: pointer;
     transform: scale(1.03);
+}
+.read-container h3{
+    font-size: 18px;
 }
 .read{
     background-color: #4ad368;
@@ -202,8 +225,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #888;
+    background-color: rgb(189, 189, 189);
     border: none;
+    transition: all 0.3s ease-out;
+}
+.delete-container{
+    font-size: 18px;
 }
 .delete:hover{
     cursor: pointer;
@@ -226,20 +253,54 @@ header{
   }
 .modal{
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    border: none;
+    border-radius: 10px;
+    width: 30%; /* Could be more or less, depending on screen size */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+  }
+  #form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
+  }
+  .booklabel{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .bookinput{
+    height: 20px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  #add-button{
+    font-size: 18px;
+    font-weight: 700;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(189, 189, 189);
+    transition: all 0.3s ease-out;
+  }
+  #add-button:hover{
+    cursor: pointer;
+    background-color: rgb(206, 206, 206);
   }
   .modal-section{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   
