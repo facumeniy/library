@@ -1,8 +1,9 @@
 *{
+    font-family: 'Raleway', sans-serif;
     margin: 0;
 }
 body{
-    background-color: #171A21;
+    background-color: #f8f6f2;
     height: 100vh;
 }
 header{
@@ -28,32 +29,34 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(40,44,89);
-    background: linear-gradient(90deg, rgba(40,44,89,1) 0%, rgba(42,44,64,1) 74%);
+    background-color: #A3000E;
     border: none;
     transition: all 0.3s ease-out;
 }
 .add-book-card:hover{
-    cursor: pointer;
-    transform: scale(1.05);
+    background-color: #7c000a;
 }
 .add-button-container{
-    width: 100px;
-    height: 100px;
-    border: 2px solid red;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .add-button{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+    border-radius: 3px;
+    background-color: #cc1d2b;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-out;
-    border: 1px solid white;
 }
 .add-button:hover{
-    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #ee2a3a;
 }
 .add-btn-text{
     width: 100%;
@@ -61,9 +64,40 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 .add-btn-text h3{
+    color: #ffffff;
+}
+.delete-button-container{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-button{
+    width: 70%;
+    height: 70%;
+    border-radius: 3px;
+    background-color: #cc1d2b;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+.delete-button:hover{
+    cursor: pointer;
+    background-color: #ee2a3a;
+}
+.delete-btn-text{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-btn-text h3{
     color: white;
 }
 /* END OF ADD CARD STYLING */
@@ -83,30 +117,34 @@ header{
     align-items: center;
     border: 2px solid yellow;
 }
-.book-container{
-    width: 100%;
-    height: 100%;
-    border: 1px solid green;
-}
+/* BOOK CARD STYLING */
 .book{
     height: 300px;
     min-width: 225px;
+    max-width: 225px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    border: 2px solid cyan;
+    background-color: #f8f6f2;
+    border: 5px solid #5f4844;
     margin: 00px 20px;
 }
 .title-container{
     width: 100%;
-    height: 20px;
+    height: 60px;
+    margin-top: 30px;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid red;
+}
+.title-container h3{
+    font-weight: 700;
+    font-size: 25px;
+    color: #5f4844;
 }
 .autor-container{
     width: 100%;
@@ -115,6 +153,10 @@ header{
     justify-content: center;
     align-items: center;
     border: 1px solid red;
+}
+.autor-container h3{
+    font-weight: 500;
+    color: #5f4844;
 }
 .pages-container{
     width: 100%;

@@ -16,6 +16,12 @@ let i = 0;
 let isRead = false;
 
 // FUNCTIONS
+function reset(){
+    bookName.value = "";
+    bookAuthor.value = "";
+    bookPages.value = "";
+}
+
 function book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -78,6 +84,7 @@ function newBook(stack){
 
     deleteCont.addEventListener('click', () => {
         book.classList.add('disable');
+        library.pop(i);
         i--;
     });
 
