@@ -1,4 +1,5 @@
-const add = document.querySelector(".add-book-card");
+const add = document.querySelector(".add-button");
+const clear = document.querySelector(".delete-button");
 const bookLibrary = document.querySelector(".book-stack");
 const bookLibrary2 = document.querySelector(".book-stack-2");
 
@@ -18,9 +19,12 @@ let isRead = false;
 
 // FUNCTIONS
 function reset(){
+    i = 0;
+    library = [];
     bookName.value = "";
     bookAuthor.value = "";
     bookPages.value = "";
+    isRead = false;
 }
 
 function book(title, author, pages, read){
@@ -139,4 +143,10 @@ window.onclick = function(event) {
 
 bookRead.addEventListener('click', () => {
     isRead = !isRead;
+});
+
+clear.addEventListener('click', () => {
+    bookLibrary.innerHTML = "";
+    bookLibrary2.innerHTML = "";
+    reset();
 });
