@@ -43,7 +43,7 @@ function newBook(stack){
     book.appendChild(titleContainer);
 
     const title = document.createElement('h3');
-    title.innerHTML = library[i].title;
+    title.innerHTML = `"${library[i].title}"`;
     titleContainer.appendChild(title);
 
     const autorContainer = document.createElement('div');
@@ -59,7 +59,7 @@ function newBook(stack){
     book.appendChild(pagesContainer);
 
     const pages = document.createElement('h3');
-    pages.innerHTML = library[i].pages;
+    pages.innerHTML = `${library[i].pages} pages`;
     pagesContainer.appendChild(pages);
 
     const readContainer = document.createElement('div');
@@ -69,8 +69,10 @@ function newBook(stack){
     const read = document.createElement('h3');
     if(isRead){
         read.innerHTML = "Read";
+        readContainer.classList.add('read');
     }else if(!isRead){
         read.innerHTML = "Not read";
+        readContainer.classList.add('not-read');
     }
     readContainer.appendChild(read);
 
@@ -79,7 +81,7 @@ function newBook(stack){
     book.appendChild(deleteCont);
 
     const deleteText = document.createElement('h3');
-    deleteText.innerHTML = "DELETE";
+    deleteText.innerHTML = "Remove";
     deleteCont.appendChild(deleteText);
 
     deleteCont.addEventListener('click', () => {
@@ -97,10 +99,10 @@ add.addEventListener('click', () => {
 
 addBtn.addEventListener('click', () => {
     if(i < 4){
-        a = bookName.value.toUpperCase();
-        b = bookAuthor.value.toUpperCase();
-        c = bookPages.value.toUpperCase();
-        d = bookRead.value.toUpperCase();
+        a = bookName.value;
+        b = bookAuthor.value;
+        c = bookPages.value;
+        d = bookRead;
         addBook(a, b, c, d);
         newBook(bookLibrary);
     }else if(i >= 4 && i<9){
