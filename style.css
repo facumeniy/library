@@ -30,7 +30,7 @@ header{
     margin-left: 30px;
     /* border: 1px solid red; */
 }
-#logo{
+#header-logo{
     font-size: 40px;
     font-weight: 700;
 }
@@ -263,26 +263,26 @@ header{
     justify-content: flex-start;
     align-items: center;
   }
-  #form{
+#form{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
-  }
-  .booklabel{
+    /* border: 1px solid red; */
+}
+.booklabel{
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 5px;
-  }
-  .bookinput{
+}
+.bookinput{
     height: 20px;
     width: 200px;
     margin-bottom: 20px;
-  }
-  #add-button{
+}
+#add-button{
     font-size: 18px;
     font-weight: 700;
     width: 150px;
@@ -291,16 +291,39 @@ header{
     border: none;
     background-color: rgb(189, 189, 189);
     transition: all 0.3s ease-out;
-  }
-  #add-button:hover{
+}
+#add-button:hover{
     cursor: pointer;
     background-color: rgb(206, 206, 206);
-  }
-  .modal-section{
+}
+.modal-section{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
-  }
+}
+
+.footer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+}
+.footer-img-container{
+    margin-right: 10px;
+}
+#logo{
+    transition: all 0.3s;
+}
+#logo:hover{
+    cursor: pointer;
+    transform: scale(1.15) rotate(360deg);
+}
+#footer-text{
+    font-size: 20px;
+}
   
