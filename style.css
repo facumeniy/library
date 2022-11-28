@@ -4,3 +4,89 @@
 body{
     height: 100vh;
 }
+header{
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid black;
+}
+.library-section{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid red;
+}
+.add-book-card{
+    height: 300px;
+    min-width: 225px;
+    margin: 00px 20px;
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+.add-book-card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.book-stack{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid yellow;
+}
+.book{
+    height: 300px;
+    min-width: 225px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid cyan;
+    margin: 00px 20px;
+}
+.title-container{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.autor-container{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.pages-container{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.read-container{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.delete{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.disable{
+    display: none;
+}
