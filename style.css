@@ -2,6 +2,7 @@
     margin: 0;
 }
 body{
+    background-color: #171A21;
     height: 100vh;
 }
 header{
@@ -17,17 +18,55 @@ header{
     align-items: center;
     border: 1px solid red;
 }
+/* ADD CARD STYLING */
 .add-book-card{
     height: 300px;
     min-width: 225px;
     margin: 00px 20px;
     border-radius: 10px;
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(40,44,89);
+    background: linear-gradient(90deg, rgba(40,44,89,1) 0%, rgba(42,44,64,1) 74%);
+    border: none;
+    transition: all 0.3s ease-out;
 }
 .add-book-card:hover{
     cursor: pointer;
     transform: scale(1.05);
 }
+.add-button-container{
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+}
+.add-button{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+    border: 1px solid white;
+}
+.add-button:hover{
+    transform: scale(1.05);
+}
+.add-btn-text{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+.add-btn-text h3{
+    color: white;
+}
+/* END OF ADD CARD STYLING */
 .book-stack{
     height: 100%;
     width: 100%;
@@ -44,6 +83,11 @@ header{
     align-items: center;
     border: 2px solid yellow;
 }
+.book-container{
+    width: 100%;
+    height: 100%;
+    border: 1px solid green;
+}
 .book{
     height: 300px;
     min-width: 225px;
@@ -52,6 +96,7 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
     border: 2px solid cyan;
     margin: 00px 20px;
 }
