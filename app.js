@@ -2,10 +2,19 @@ const add = document.querySelector(".add-book-card");
 const bookLibrary = document.querySelector(".book-stack");
 const bookLibrary2 = document.querySelector(".book-stack-2");
 
+// MODAL SELECTORS
+const modal = document.querySelector(".modal-container");
+const bookName = document.querySelector("#book-name");
+const bookAuthor = document.querySelector("#book-author");
+const bookPages = document.querySelector("#book-pages");
+const bookRead = document.querySelector("#book-read");
+const addBtn = document.querySelector("#add-button");
 
+// GLOBAL VARIABLES
 let library = [];
 let i = 0;
 
+// FUNCTIONS
 function book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -20,18 +29,6 @@ function addBook(){
     d = prompt("Read").toUpperCase();
     library.push(new book(a, b, c, d));
 };
-
-add.addEventListener('click', () => {
-    if(i < 5){
-        addBook();
-        newBook(bookLibrary);
-    }else if(i > 5){
-        addBook();
-        newBook(bookLibrary2);
-    }else{
-        console.log('fuck you');
-    }
-});
 
 function newBook(stack){
     const book = document.createElement('div');
@@ -84,3 +81,28 @@ function newBook(stack){
 
     i++;
 }
+
+add.addEventListener('click', () => {
+    modal.style.display = "block";
+});
+
+addBtn.addEventListener('click', () => {
+    addBook();
+    modal.style.display = "none";
+});
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+// if(i < 5){
+//     addBook();
+//     newBook(bookLibrary);
+// }else if(i > 5){
+//     addBook();
+//     newBook(bookLibrary2);
+// }else{
+//     console.log('fuck you');
+// }
