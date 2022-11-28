@@ -1,5 +1,7 @@
 const add = document.querySelector(".add-book-card");
 const bookLibrary = document.querySelector(".book-stack");
+const bookLibrary2 = document.querySelector(".book-stack-2");
+
 
 let library = [];
 let i = 0;
@@ -19,17 +21,22 @@ function addBook(){
     library.push(new book(a, b, c, d));
 };
 
-function showLibrary(){
-    for(i = 0; i < library.length; i++){
-        console.log(library[i]);
-    }
-};
-
 add.addEventListener('click', () => {
-    addBook();
+    if(i < 5){
+        addBook();
+        newBook(bookLibrary);
+    }else if(i > 5){
+        addBook();
+        newBook(bookLibrary2);
+    }else{
+        console.log('fuck you');
+    }
+});
+
+function newBook(stack){
     const book = document.createElement('div');
     book.classList.add('book');
-    bookLibrary.appendChild(book);
+    stack.appendChild(book);
 
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
@@ -76,4 +83,4 @@ add.addEventListener('click', () => {
     });
 
     i++;
-})
+}
